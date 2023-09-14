@@ -1,10 +1,11 @@
 {
   "name": "commandkit-helper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple helper for the npm package CommandKit.",
   "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FearlessNite345/CommandKit-Helper"
   },
   "keywords": [],
   "author": "",
