@@ -1,6 +1,6 @@
 {
   "name": "commandkit-helper",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A simple helper for the npm package CommandKit.",
   "main": "src/index.js",
   "repository": {
@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "commandkit": "^0.1.1",
     "discord.js": "^14.13.0",
     "typescript": "^5.2.2"
   }

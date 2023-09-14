@@ -1,5 +1,4 @@
 import {
-    ChatInputCommandInteraction,
     Client,
     ContextMenuCommandBuilder,
     MessageContextMenuCommandInteraction,
@@ -7,26 +6,17 @@ import {
     SlashCommandSubcommandsOnlyBuilder,
     UserContextMenuCommandInteraction,
 } from 'discord.js';
-
-interface BasicSlashCommandRunOptions {
-    client: Client;
-    interaction: ChatInputCommandInteraction;
-}
+import { OptionTypes } from './Options';
+import { SlashCommandProps } from 'commandkit';
 
 type BasicSlashCommandRunFunction = (
-    options: BasicSlashCommandRunOptions
-) => Promise<void>;
+    options: SlashCommandProps
+) => Promise<void> | void;
 
 export interface BasicCommandType {
     run: BasicSlashCommandRunFunction;
     data: SlashCommandBuilder | SlashCommandSubcommandsOnlyBuilder;
-    options?: {
-        devOnly?: boolean;
-        guildOnly?: boolean;
-        userPermissions?: string[] | bigint[];
-        botPermissions?: string[] | bigint[];
-        deleted?: boolean;
-    };
+    options?: OptionTypes;
 }
 
 interface UserContextCommandRunOptions {
@@ -41,13 +31,7 @@ type UserContextCommandRunFunction = (
 export interface UserContextCommandType {
     run: UserContextCommandRunFunction;
     data: ContextMenuCommandBuilder;
-    options?: {
-        devOnly?: boolean;
-        guildOnly?: boolean;
-        userPermissions?: string[] | bigint[];
-        botPermissions?: string[] | bigint[];
-        deleted?: boolean;
-    };
+    options?: OptionTypes;
 }
 
 interface MessageContextCommandRunOptions {
@@ -62,11 +46,5 @@ type MessageContextCommandRunFunction = (
 export interface MessageContextCommandType {
     run: MessageContextCommandRunFunction;
     data: ContextMenuCommandBuilder;
-    options?: {
-        devOnly?: boolean;
-        guildOnly?: boolean;
-        userPermissions?: string[] | bigint[];
-        botPermissions?: string[] | bigint[];
-        deleted?: boolean;
-    };
+    options?: OptionTypes;
 }
