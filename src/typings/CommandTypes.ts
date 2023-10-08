@@ -8,7 +8,7 @@ import {
 } from 'discord.js';
 import { OptionTypes } from './Options';
 import { CommandKit } from 'commandkit';
-import { ExtendedClient } from './Client';
+import { ExtendedClient } from '../structures/Client';
 
 interface BasicSlashCommandRunOptions {
     interaction: ChatInputCommandInteraction;
