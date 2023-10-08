@@ -28,7 +28,7 @@ CommandKit-Helper is a simple library that will help with building comamnds to w
 
 ## Features
 
--   Extreamly Beginner friendly
+-   Extremely Beginner friendly
 -   Allows you to have proper types when using [CommandKit](https://www.npmjs.com/package/commandkit)
 -   Custom extended discord client so you can have custom options inside the client itself
 

@@ -2,6 +2,7 @@ import {
     ChatInputCommandInteraction,
     ContextMenuCommandBuilder,
     MessageContextMenuCommandInteraction,
+    RESTPostAPIChatInputApplicationCommandsJSONBody,
     SlashCommandBuilder,
     SlashCommandSubcommandsOnlyBuilder,
     UserContextMenuCommandInteraction,
@@ -22,7 +23,7 @@ type BasicSlashCommandRunFunction = (
 
 export interface BasicCommandType {
     run: BasicSlashCommandRunFunction;
-    data: SlashCommandBuilder | SlashCommandSubcommandsOnlyBuilder;
+    data: SlashCommandBuilder | SlashCommandSubcommandsOnlyBuilder | RESTPostAPIChatInputApplicationCommandsJSONBody;
     options?: OptionTypes;
 }
 
