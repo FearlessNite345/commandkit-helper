@@ -1,5 +1,5 @@
 import {
-    Client,
+    ChatInputCommandInteraction,
     ContextMenuCommandBuilder,
     MessageContextMenuCommandInteraction,
     SlashCommandBuilder,
@@ -7,10 +7,17 @@ import {
     UserContextMenuCommandInteraction,
 } from 'discord.js';
 import { OptionTypes } from './Options';
-import { SlashCommandProps } from 'commandkit';
+import { CommandKit } from 'commandkit';
+import { ExtendedClient } from './Client';
+
+interface BasicSlashCommandRunOptions {
+    interaction: ChatInputCommandInteraction;
+    client: ExtendedClient;
+    handler: CommandKit;
+}
 
 type BasicSlashCommandRunFunction = (
-    options: SlashCommandProps
+    options: BasicSlashCommandRunOptions
 ) => Promise<void> | void;
 
 export interface BasicCommandType {
@@ -20,7 +27,7 @@ export interface BasicCommandType {
 }
 
 interface UserContextCommandRunOptions {
-    client: Client;
+    client: ExtendedClient;
     interaction: UserContextMenuCommandInteraction;
 }
 
@@ -35,7 +42,7 @@ export interface UserContextCommandType {
 }
 
 interface MessageContextCommandRunOptions {
-    client: Client;
+    client: ExtendedClient;
     interaction: MessageContextMenuCommandInteraction;
 }
 

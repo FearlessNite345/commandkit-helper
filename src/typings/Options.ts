@@ -1,8 +1,10 @@
+import { PermissionResolvable } from "discord.js";
+
 export interface OptionTypes {
     devOnly?: boolean;
     guildOnly?: boolean;
-    userPermissions?: string[] | bigint[];
-    botPermissions?: string[] | bigint[];
+    userPermissions?: PermissionResolvable[];
+    botPermissions?: PermissionResolvable[];
     deleted?: boolean;
     [key: string]: any
 }
