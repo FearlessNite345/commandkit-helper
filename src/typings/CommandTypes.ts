@@ -1,58 +1,43 @@
 import {
-    ChatInputCommandInteraction,
+    Client,
     ContextMenuCommandBuilder,
     MessageContextMenuCommandInteraction,
-    RESTPostAPIChatInputApplicationCommandsJSONBody,
+    RESTPostAPIApplicationCommandsJSONBody,
     SlashCommandBuilder,
-    SlashCommandSubcommandsOnlyBuilder,
     UserContextMenuCommandInteraction,
 } from 'discord.js';
-import { OptionTypes } from './Options';
-import { CommandKit } from 'commandkit';
-import { ExtendedClient } from '../structures/Client';
+import { CommandData, CommandKit, SlashCommandProps } from 'commandkit';
 
-interface BasicSlashCommandRunOptions {
-    interaction: ChatInputCommandInteraction;
-    client: ExtendedClient;
+export type AnySlashCommandData =
+    | CommandData
+    | SlashCommandBuilder
+    | RESTPostAPIApplicationCommandsJSONBody;
+
+export type SlashCommandRunFunction = (
+    options: SlashCommandProps
+) => Promise<void> | void;
+
+export type AnyContextCommandData =
+    | CommandData
+    | RESTPostAPIApplicationCommandsJSONBody
+    | ContextMenuCommandBuilder;
+
+export type UserContextCommandRunFunction = (
+    options: UserContextCommandProps
+) => Promise<void> | void;
+
+export type MessageContextCommandRunFunction = (
+    options: MessageContextCommandProps
+) => Promise<void> | void;
+
+interface UserContextCommandProps {
+    client: Client;
+    interaction: UserContextMenuCommandInteraction;
     handler: CommandKit;
 }
 
-type BasicSlashCommandRunFunction = (
-    options: BasicSlashCommandRunOptions
-) => Promise<void> | void;
-
-export interface BasicCommandType {
-    run: BasicSlashCommandRunFunction;
-    data: SlashCommandBuilder | SlashCommandSubcommandsOnlyBuilder | RESTPostAPIChatInputApplicationCommandsJSONBody;
-    options?: OptionTypes;
-}
-
-interface UserContextCommandRunOptions {
-    client: ExtendedClient;
-    interaction: UserContextMenuCommandInteraction;
-}
-
-type UserContextCommandRunFunction = (
-    options: UserContextCommandRunOptions
-) => Promise<void>;
-
-export interface UserContextCommandType {
-    run: UserContextCommandRunFunction;
-    data: ContextMenuCommandBuilder;
-    options?: OptionTypes;
-}
-
-interface MessageContextCommandRunOptions {
-    client: ExtendedClient;
+interface MessageContextCommandProps {
+    client: Client;
     interaction: MessageContextMenuCommandInteraction;
-}
-
-type MessageContextCommandRunFunction = (
-    options: MessageContextCommandRunOptions
-) => Promise<void>;
-
-export interface MessageContextCommandType {
-    run: MessageContextCommandRunFunction;
-    data: ContextMenuCommandBuilder;
-    options?: OptionTypes;
+    handler: CommandKit;
 }
