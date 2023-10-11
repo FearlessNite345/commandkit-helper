@@ -29,8 +29,7 @@ CommandKit-Helper is a simple library that will help with building comamnds to w
 ## Features
 
 -   Extremely Beginner friendly
--   Allows you to have proper types when using [CommandKit](https://www.npmjs.com/package/commandkit)
--   Custom extended discord client so you can have custom options inside the client itself
+-   Allows you to have command builders for [CommandKit](https://www.npmjs.com/package/commandkit)
 
 ## Installation
 
@@ -44,95 +43,61 @@ This is a small usage example of how you can use this package
 
 ### CJS
 
-#### CustomDiscordClient
-
 ```js
-const { ExtendedClient } = require('commandkit-helper');
+const { SlashCommand, UserContextCommand, MessageContextCommand } = require('commandkit-helper')
 
-const client = new ExtendedClient(
-    {
-        intents: [],
-    },
-    {
-        // Here would go any custom options you want to always
-        // be avaiable from the client provided inside the commandbuilders
-        testNumber: 21,
-    }
-);
+module.exports = new SlashCommand()
+  .setData({
+    name: 'ping',
+    description: 'Pong!'
+  })
+  .setRun(async ({ interaction, client, handler }) => {
 
-console.log(client.customOptions.testNumber); // -> 21 //Note: this will not give you intellisence
-```
-
-#### CommandBuilder
-
-```js
-const { BasicSlashCommand } = require('commandkit-helper')
-
-module.exports = new BasicSlashCommand({
-    run: async ({ interaction, client, handler }) => {
-
-    },
-
-    data: new SlashCommandBuilder()...
-
-    // The options do have types so you can
-    // add only the ones you want or custom ones
-    options: {
-
-    }
-})
+  })
+  // You can also set all the options if needed by default 
+  // all the values are false so if you dont set them they wont matter
 ```
 
 ### ESM
 
-#### CustomDiscordClient
-
-```js
-import { ExtendedClient } from 'commandkit-helper';
-
-const client = new ExtendedClient(
-    {
-        intents: [],
-    },
-    {
-        // Here would go any custom options you want to always
-        // be avaiable from the client provided inside the commandbuilders
-        testNumber: 21,
-    }
-);
-
-console.log(client.customOptions.testNumber); // -> 21 //Note: this will not give you intellisence
-```
-
-#### CommandBuilder
-
 ```ts
-import { BasicSlashCommand } from 'commandkit-helper'
+import { SlashCommand, UserContextCommand, MessageContextCommand } from 'commandkit-helper'
 
-export = new BasicSlashCommand({
-    run: async ({ interaction, client,handler }) => {
+export default new SlashCommand()
+  .setData({
+    name: 'ping',
+    description: 'Pong!'
+  })
+  .setRun(async ({ interaction, client, handler }) => {
 
-    },
+  })
+  // You can also set all the options if needed by default 
+  // all the values are false so if you dont set them they wont matter
+  // same goes for the ones below
 
-    data: new SlashCommandBuilder()...
+export default new UserContextCommand()
+  .setData({
+    name: 'user',
+    type: CommandType.User
+  })
+  .setRun(async ({ interaction, client, handler }) => {
 
-    // The options do have types so you can
-    // add only the ones you want or custom ones
-    options: {
+  })
 
-    }
-})
+export default new MessageContextCommand()
+  .setData({
+    name: 'content',
+    type: CommandType.Message
+  })
+  .setRun(async ({ interaction, client, handler }) => {
+
+  })
 ```
 
 # Changelog
 
-### v1.2.0
+### v1.3.0
 
--   Improved README
--   UserPermissions && BotPermissions are now of type PermissionResolvable
--   Added custom discord client
-
-#### V1.1.0
-
--   Added support for custom options
--   Changed to using SlashCommandProps from CommandKit
+-   Added way better command builders that are alot easier to use look alot like the SlashCommandBuilder from D.JS
+-   Removed custom discord client as it wont work with these new builders
+-   Removed the old types so this update will cause some breaking changes but will be easy to fix

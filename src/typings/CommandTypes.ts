@@ -41,3 +41,4 @@ interface MessageContextCommandProps {
     interaction: MessageContextMenuCommandInteraction;
     handler: CommandKit;
 }
+

@@ -24,8 +24,8 @@ export class SlashCommand {
         return this;
     }
 
-    setDeveloper(dev: boolean) {
-        this.options.devOnly = dev;
+    setDevOnly(devOnly: boolean) {
+        this.options.devOnly = devOnly;
         return this;
     }
 
@@ -71,8 +71,8 @@ export class UserContextCommand {
         return this;
     }
 
-    setDeveloper(dev: boolean) {
-        this.options.devOnly = dev;
+    setDevOnly(devOnly: boolean) {
+        this.options.devOnly = devOnly;
         return this;
     }
 
@@ -102,7 +102,7 @@ export class UserContextCommand {
     }
 }
 
-export class MessageContextCommandBuilder {
+export class MessageContextCommand {
     public data!: AnyContextCommandData;
     public options: CommandOptions = {
         deleted: false,
@@ -118,8 +118,8 @@ export class MessageContextCommandBuilder {
         return this;
     }
 
-    setDeveloper(dev: boolean) {
-        this.options.devOnly = dev;
+    setDevOnly(devOnly: boolean) {
+        this.options.devOnly = devOnly;
         return this;
     }
 
