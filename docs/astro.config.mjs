@@ -3,6 +3,8 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+    site: 'https://fearlessnite345.github.io',
+    base: '/CommandKit-Helper',
     integrations: [
         starlight({
             title: 'CommandKit-Helper',
@@ -31,6 +33,4 @@ export default defineConfig({
             ],
         }),
     ],
-    site: 'https://fearlessnite345.github.io',
-    base: '/CommandKit-Helper'
 });
