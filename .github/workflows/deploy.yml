@@ -1,5 +1,4 @@
 name: Deploy to GitHub Pages
-version: latest
 
 on:
   # Trigger the workflow every time you push to the `main` branch
