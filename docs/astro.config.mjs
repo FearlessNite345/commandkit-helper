@@ -32,5 +32,5 @@ export default defineConfig({
         }),
     ],
     site: 'https://fearlessnite345.github.io',
-    base: '/CommandKit-Helper'
+    base: '/CommandKit-Helper/docs'
 });
