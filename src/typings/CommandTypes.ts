@@ -1,12 +1,10 @@
 import {
-    Client,
     ContextMenuCommandBuilder,
-    MessageContextMenuCommandInteraction,
     RESTPostAPIApplicationCommandsJSONBody,
     SlashCommandBuilder,
-    UserContextMenuCommandInteraction,
 } from 'discord.js';
-import { CommandData, CommandKit, SlashCommandProps } from 'commandkit';
+import { CommandData, SlashCommandProps } from 'commandkit';
+import { UserContextCommandProps, MessageContextCommandProps } from '../interfaces/CommandInterfaces';
 
 export type AnySlashCommandData =
     | CommandData
@@ -29,16 +27,4 @@ export type UserContextCommandRunFunction = (
 export type MessageContextCommandRunFunction = (
     options: MessageContextCommandProps
 ) => Promise<void> | void;
-
-interface UserContextCommandProps {
-    client: Client;
-    interaction: UserContextMenuCommandInteraction;
-    handler: CommandKit;
-}
-
-interface MessageContextCommandProps {
-    client: Client;
-    interaction: MessageContextMenuCommandInteraction;
-    handler: CommandKit;
-}
 
