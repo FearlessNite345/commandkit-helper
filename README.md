@@ -44,54 +44,69 @@ This is a small usage example of how you can use this package
 ### CJS
 
 ```js
-const { SlashCommand, UserContextCommand, MessageContextCommand } = require('commandkit-helper')
+const {
+    SlashCommand,
+    UserContextCommand,
+    MessageContextCommand,
+} = require('commandkit-helper');
 
 module.exports = new SlashCommand()
-  .setData({
-    name: 'ping',
-    description: 'Pong!'
-  })
-  .setRun(async ({ interaction, client, handler }) => {
+    .setData({
+        name: 'ping',
+        description: 'Pong!',
+    })
+    .setRun(async ({ interaction, client, handler }) => {});
+// You can also set all the options if needed by default
+// all the values are false so if you dont set them they wont matter
+// same goes for the ones below
 
-  })
-  // You can also set all the options if needed by default 
-  // all the values are false so if you dont set them they wont matter
+module.exports = new UserContextCommand()
+    .setData({
+        name: 'user',
+        type: CommandType.User,
+    })
+    .setRun(async ({ interaction, client, handler }) => {});
+
+module.exports = new MessageContextCommand()
+    .setData({
+        name: 'content',
+        type: CommandType.Message,
+    })
+    .setRun(async ({ interaction, client, handler }) => {});
 ```
 
 ### ESM
 
 ```ts
-import { SlashCommand, UserContextCommand, MessageContextCommand } from 'commandkit-helper'
+import {
+    SlashCommand,
+    UserContextCommand,
+    MessageContextCommand,
+} from 'commandkit-helper';
 
 export default new SlashCommand()
-  .setData({
-    name: 'ping',
-    description: 'Pong!'
-  })
-  .setRun(async ({ interaction, client, handler }) => {
-
-  })
-  // You can also set all the options if needed by default 
-  // all the values are false so if you dont set them they wont matter
-  // same goes for the ones below
+    .setData({
+        name: 'ping',
+        description: 'Pong!',
+    })
+    .setRun(async ({ interaction, client, handler }) => {});
+// You can also set all the options if needed by default
+// all the values are false so if you dont set them they wont matter
+// same goes for the ones below
 
 export default new UserContextCommand()
-  .setData({
-    name: 'user',
-    type: CommandType.User
-  })
-  .setRun(async ({ interaction, client, handler }) => {
-
-  })
+    .setData({
+        name: 'user',
+        type: CommandType.User,
+    })
+    .setRun(async ({ interaction, client, handler }) => {});
 
 export default new MessageContextCommand()
-  .setData({
-    name: 'content',
-    type: CommandType.Message
-  })
-  .setRun(async ({ interaction, client, handler }) => {
-
-  })
+    .setData({
+        name: 'content',
+        type: CommandType.Message,
+    })
+    .setRun(async ({ interaction, client, handler }) => {});
 ```
 
 # Changelog
