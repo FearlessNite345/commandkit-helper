@@ -31,6 +31,6 @@ export default defineConfig({
             ],
         }),
     ],
-    /*site: 'https://fearlessnite345.github.io',
-    base: '/commandkit-helper'*/
+    site: 'https://fearlessnite345.github.io',
+    base: '/commandkit-helper'
 });
