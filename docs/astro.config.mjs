@@ -8,7 +8,21 @@ export default defineConfig({
     integrations: [
         starlight({
             title: 'CommandKit-Helper',
-            favicon: 'FS.svg',
+            favicon: 'FS.png',
+            customCss: [
+                './src/styles/colors.css'
+            ],
+            pagination: false,
+            lastUpdated: true,
+            tableOfContents: false,
+            logo: {
+                dark: './public/FS.png',    
+                light: './public/FS.png',
+                src: './public/FS.png',
+            },
+            editLink: {
+                baseUrl: 'https://github.com/FearlessNite345/CommandKit-Helper/tree/main/docs'
+            },
             social: {
                 github: 'https://github.com/FearlessNite345/CommandKit-Helper',
                 youtube: 'https://www.youtube.com/@thefearlessstudios'

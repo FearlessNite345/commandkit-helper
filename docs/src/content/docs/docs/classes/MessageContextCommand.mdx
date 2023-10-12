@@ -10,13 +10,13 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 const { MessageContextCommand } = require('commandkit-helper')
 
 module.exports = new MessageContextCommand()
-.setData({
-name: 'ping',
-description: 'Pong!'
-})
-.setRun(async ({ interaction, client, handler }) => {
-
-})
+  .setData({
+    name: 'ping',
+    description: 'Pong!'
+  })
+  .setRun(async ({ interaction, client, handler }) => {
+  
+  })
 ```
 </TabItem>
 <TabItem label="ESM">
@@ -29,80 +29,80 @@ export default new MessageContextCommand()
     description: 'Pong!'
   })
   .setRun(async ({ interaction, client, handler }) => {
-
-})
+    
+  })
 ```
 </TabItem>
 </Tabs>
 
 ## Properties
 
-### `data: AnyContextCommandData`
+#### `data`
 
 - Type: [`AnyContextCommandData`](/docs/typedef/anycontextcommanddata)
 
-### `options: CommandOptions`
+#### `options`
 
 - Type: [`CommandOptions`](https://commandkit.js.org/typedef/CommandOptions)
 
-### `runRunFunction`
+#### `run`
 
 - Type: [`MessageContextCommandRunFunction`](/docs/typedef/messagecontextcommandrunfunction)
 
 ## Methods
 
-### `setData(data: AnyContextCommandData)`
+#### `setData(data)`
 
 Sets the data for the slash command.
 
 - Parameters:
-  - `data`: The data to set for the slash command.
+  - `data`: [`AnyContextCommandData`](/docs/typedef/anycontextcommanddata)
 - Returns: The modified `MessageContextCommand`.
 
-### `setDevOnly(devOnly: boolean)`
+#### `setDevOnly(devOnly)`
 
 Sets whether the command is for development purposes only.
 
 - Parameters:
-  - `devOnly`: A boolean indicating if the command is for development only.
+  - `devOnly`: `boolean`
 - Returns: The modified `MessageContextCommand`.
 
-### `setGuildOnly(guildOnly: boolean)`
+#### `setGuildOnly(guildOnly)`
 
 Sets whether the command can only be used in guilds (servers).
 
 - Parameters:
-  - `guildOnly`: A boolean indicating if the command can only be used in guilds.
+  - `guildOnly`: `boolean`
 - Returns: The modified `MessageContextCommand`.
 
-### `setUserPermissions(userPermissions: PermissionResolvable)`
+#### `setUserPermissions(userPermissions)`
 
 Sets the required user permissions to use the command.
 
 - Parameters:
-  - `userPermissions`: The required user permissions.
+  - `userPermissions`: [`PermissionResolvable`](https://old.discordjs.dev/#/docs/discord.js/main/typedef/PermissionResolvable)
 - Returns: The modified `MessageContextCommand`.
 
-### `setBotPermissions(botPermissions: PermissionResolvable)`
+#### `setBotPermissions(botPermissions)`
 
 Sets the required bot permissions to execute the command.
 
 - Parameters:
-  - `botPermissions`: The required bot permissions.
+  - `botPermissions`: [`PermissionResolvable`](https://old.discordjs.dev/#/docs/discord.js/main/typedef/PermissionResolvable)
 - Returns: The modified `MessageContextCommand`.
 
-### `setDeleted(deleted: boolean)`
+#### `setDeleted(deleted)`
 
 Sets whether the command is deleted.
 
 - Parameters:
-  - `deleted`: A boolean indicating if the command is deleted.
+  - `deleted`: `boolean`
 - Returns: The modified `MessageContextCommand`.
 
-### `setRun(runRunFunction)`
+#### `setRun(run)`
 
 Sets the function to be executed when the command is used.
 
 - Parameters:
-  - `run`: The function to execute when the command is invoked.
+  - `run`: [`MessageContextCommandRunFunction`](/docs/typedef/messagecontextcommandrunfunction)
 - Returns: The modified `MessageContextCommand`.
