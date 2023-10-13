@@ -2,6 +2,7 @@ import {
     ContextMenuCommandBuilder,
     RESTPostAPIApplicationCommandsJSONBody,
     SlashCommandBuilder,
+    SlashCommandSubcommandsOnlyBuilder,
 } from 'discord.js';
 import { CommandData, SlashCommandProps } from 'commandkit';
 import { UserContextCommandProps, MessageContextCommandProps } from '../interfaces/CommandInterfaces';
@@ -9,6 +10,7 @@ import { UserContextCommandProps, MessageContextCommandProps } from '../interfac
 export type AnySlashCommandData =
     | CommandData
     | SlashCommandBuilder
+    | SlashCommandSubcommandsOnlyBuilder
     | RESTPostAPIApplicationCommandsJSONBody;
 
 export type SlashCommandRunFunction = (

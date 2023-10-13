@@ -49,6 +49,11 @@ export class SlashCommand {
         return this;
     }
 
+    addCustomOption(optionName: string, optionValue: any) {
+        this.options[optionName] = optionValue
+        return this
+    }
+
     setRun(run: SlashCommandRunFunction) {
         this.run = run;
         return this;

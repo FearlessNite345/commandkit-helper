@@ -99,6 +99,16 @@ Sets whether the command is deleted.
   - `deleted`: `boolean`
 - Returns: The modified `SlashCommand`.
 
+#### `addCustomOption(optionName, optionValue)`
+
+Adds a custom option to the options section to be used in a custom validation
+`commandObj.options?.optionname`
+
+- Parameters:
+  - `optionName`: `string`
+  - `optionValue`: `any`
+- Returns: The modified `SlashCommand`.
+
 #### `setRun(run)`
 
 Sets the function to be executed when the command is used.

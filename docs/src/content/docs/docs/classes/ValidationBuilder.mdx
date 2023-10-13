@@ -1,0 +1,34 @@
+---
+title: ValidationBuilder
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs>
+<TabItem label="CommonJS">
+```js
+const { ValidationBuilder } = require('commandkit-helper')
+
+module.exports = new ValidationBuilder(({ client, commandObj, handler, interaction }) => {
+
+})
+
+````
+</TabItem>
+<TabItem label="ESM">
+```ts
+import { ValidationBuilder } from 'commandkit-helper'
+
+export default new ValidationBuilder(({ client, commandObj, handler, interaction }) => {
+
+})
+````
+
+</TabItem>
+</Tabs>
+
+Refer to https://commandkit.js.org/docs/validation-file-setup#parameters-explained to understand how validations work
+
+## Returns
+
+-   [`ValidationCallbackFunction`](/CommandKit-Helper/docs/typedef/validationcallbackfunction).

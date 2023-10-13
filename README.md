@@ -43,8 +43,8 @@ You can find the main documentation [here](https://fearlessnite345.github.io/Com
 
 # Changelog
 
-### v1.3.0
+### v1.4.0
 
--   Added way better command builders that are alot easier to use look alot like the SlashCommandBuilder from D.JS
--   Removed custom discord client as it wont work with these new builders
--   Removed the old types so this update will cause some breaking changes but will be easy to fix
+-   Added [ValidationBuilder](https://fearlessnite345.github.io/CommandKit-Helper/docs/classes/validationbuilder/) to make it beginner friendly as it will add the typings for you
+-   Added new method in the [SlashCommand](https://fearlessnite345.github.io/CommandKit-Helper/docs/classes/slashcommand/) called **addCustomOption()** which allows you to add a custom option to the commandObj
+-   Fixed a issue where you could not set the command data to a **SlashCommandSubcommandsOnlyBuilder** type
