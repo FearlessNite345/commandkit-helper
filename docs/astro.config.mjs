@@ -4,10 +4,10 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
     site: 'https://fearlessnite345.github.io',
-    base: '/CommandKit-Helper',
+    base: '/commandkit-helper',
     integrations: [
         starlight({
-            title: 'CommandKit-Helper',
+            title: 'commandkit-helper',
             favicon: 'FS.png',
             customCss: [
                 './src/styles/colors.css'
@@ -21,10 +21,10 @@ export default defineConfig({
                 src: './public/FS.png',
             },
             editLink: {
-                baseUrl: 'https://github.com/FearlessNite345/CommandKit-Helper/tree/main/docs'
+                baseUrl: 'https://github.com/FearlessNite345/commandkit-helper/tree/main/docs'
             },
             social: {
-                github: 'https://github.com/FearlessNite345/CommandKit-Helper',
+                github: 'https://github.com/FearlessNite345/commandkit-helper',
                 youtube: 'https://www.youtube.com/@thefearlessstudios'
             },
             sidebar: [
