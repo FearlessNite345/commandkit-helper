@@ -29,6 +29,9 @@ export class SlashCommand {
         return this;
     }
 
+    /**
+     * @deprecated Since version 1.5.0. Use `dm_permission` in your command `setData` instead.
+     */
     setGuildOnly(guildOnly: boolean) {
         this.options.guildOnly = guildOnly;
         return this;
@@ -81,6 +84,9 @@ export class UserContextCommand {
         return this;
     }
 
+    /**
+     * @deprecated Since version 1.5.0. Use `dm_permission` in your command `setData` instead.
+     */
     setGuildOnly(guildOnly: boolean) {
         this.options.guildOnly = guildOnly;
         return this;
@@ -128,6 +134,9 @@ export class MessageContextCommand {
         return this;
     }
 
+    /**
+     * @deprecated Since version 1.5.0. Use `dm_permission` in your command `setData` instead. 
+     */
     setGuildOnly(guildOnly: boolean) {
         this.options.guildOnly = guildOnly;
         return this;

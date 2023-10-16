@@ -75,6 +75,18 @@ Sets whether the command can only be used in guilds (servers).
   - `guildOnly`: `boolean`
 - Returns: The modified `UserContextCommand`.
 
+:::danger[Warning]
+  This will soon be deprecated. Use `dm_permission` in your command `setData` instead.
+
+  ```js
+  export = new UserContextCommand()
+    .setData(
+      new ContextMenuCommandBuilder()
+        .setDMPermission(false)
+    )
+  ```
+:::
+
 #### `setUserPermissions(userPermissions)`
 
 Sets the required user permissions to use the command.
