@@ -75,13 +75,13 @@ Sets whether the command can only be used in guilds (servers).
   - `guildOnly`: `boolean`
 - Returns: The modified `SlashCommand`.
 
-:::caution[Warning]
-  This will soon be deprecated. Use `dm_permission` in your command `setData` instead.
+:::danger
+  This is deprecated. Use `dm_permission` in your command `setData` instead.
 
   ```js
-  export = new SlashCommand()
+  export = new MessageContextCommand()
     .setData(
-      new SlashCommandBuilder()
+      new ContextMenuCommandBuilder()
         .setDMPermission(false)
     )
   ```
