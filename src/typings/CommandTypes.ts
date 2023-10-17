@@ -11,7 +11,8 @@ export type AnySlashCommandData =
     | CommandData
     | SlashCommandBuilder
     | SlashCommandSubcommandsOnlyBuilder
-    | RESTPostAPIApplicationCommandsJSONBody;
+    | RESTPostAPIApplicationCommandsJSONBody
+    | Omit<SlashCommandBuilder, "addSubcommand" | "addSubcommandGroup">
 
 export type SlashCommandRunFunction = (
     options: SlashCommandProps

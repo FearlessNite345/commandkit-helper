@@ -111,6 +111,11 @@ export class UserContextCommand {
         this.run = run;
         return this;
     }
+
+    addCustomOption(optionName: string, optionValue: any) {
+        this.options[optionName] = optionValue
+        return this
+    }
 }
 
 export class MessageContextCommand {
@@ -160,5 +165,10 @@ export class MessageContextCommand {
     setRun(run: MessageContextCommandRunFunction) {
         this.run = run;
         return this;
+    }
+
+    addCustomOption(optionName: string, optionValue: any) {
+        this.options[optionName] = optionValue
+        return this
     }
 }

@@ -7,7 +7,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup",
-    "deploy": "tsup && npm publish",
+    "deploy": "git push && tsup && npm publish",
     "test": "tsx tests/index.ts",
     "test:watch": "tsx watch tests/index.ts"
   },
