@@ -7,9 +7,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup",
-    "deploy": "tsup && npm publish",
-    "test": "tsx tests/index.ts",
-    "test:watch": "tsx watch tests/index.ts"
+    "deploy": "tsup && npm publish"
   },
   "keywords": [
     "commandkit",
@@ -34,7 +32,6 @@
   "dependencies": {
     "commandkit": "^0.1.6",
     "discord.js": "^14.13.0",
-    "dotenv": "^16.3.1",
-    "tsx": "^3.13.0"
+    "dotenv": "^16.3.1"
   }
 }
