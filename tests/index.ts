@@ -1,12 +1,15 @@
 import { CommandKit } from 'commandkit';
 import { Client } from 'discord.js';
 import { config } from 'dotenv';
+import { ExtendedClient } from '../src/index';
 
 config({ path: `${__dirname}/.env` });
 
-const client = new Client({
+const client = new ExtendedClient({
     intents: ['Guilds', 'GuildMembers', 'GuildMessages', 'MessageContent'],
 });
+
+client.test = 21
 
 new CommandKit({
     client,

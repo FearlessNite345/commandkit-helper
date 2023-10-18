@@ -43,5 +43,5 @@ You can find the main documentation [here](https://fearlessnite345.github.io/com
 
 # Changelog
 
-### v1.5.21
--   Added ExtendedClient
+### v1.5.3
+-   Fixed issue where extended client was not being exported correctly

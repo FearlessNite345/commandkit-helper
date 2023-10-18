@@ -5,8 +5,13 @@
 /.github
 
 .env
+.gitattributes
+
+LICENSE
 
 tsconfig.json
 tsup.config.ts
+
+pnpm-workspace.yaml
 
 FS.svg
