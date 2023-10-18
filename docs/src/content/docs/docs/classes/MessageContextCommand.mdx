@@ -51,6 +51,14 @@ export default new MessageContextCommand()
 
 ## Methods
 
+#### `setRun(run)`
+
+Sets the function to be executed when the command is used.
+
+- Parameters:
+  - `run`: [`MessageContextCommandRunFunction`](/commandkit-helper/docs/typedef/messagecontextcommandrunfunction)
+- Returns: The modified `MessageContextCommand`.
+
 #### `setData(data)`
 
 Sets the data for the slash command.
@@ -109,12 +117,4 @@ Sets whether the command is deleted.
 
 - Parameters:
   - `deleted`: `boolean`
-- Returns: The modified `MessageContextCommand`.
-
-#### `setRun(run)`
-
-Sets the function to be executed when the command is used.
-
-- Parameters:
-  - `run`: [`MessageContextCommandRunFunction`](/commandkit-helper/docs/typedef/messagecontextcommandrunfunction)
 - Returns: The modified `MessageContextCommand`.

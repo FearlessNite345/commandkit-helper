@@ -1,13 +1,13 @@
 {
   "name": "commandkit-helper",
   "description": "A simple helper for the npm package CommandKit.",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup",
-    "deploy": "git push && tsup && npm publish",
+    "deploy": "tsup && npm publish",
     "test": "tsx tests/index.ts",
     "test:watch": "tsx watch tests/index.ts"
   },

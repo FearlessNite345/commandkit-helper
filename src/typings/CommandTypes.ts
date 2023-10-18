@@ -4,8 +4,8 @@ import {
     SlashCommandBuilder,
     SlashCommandSubcommandsOnlyBuilder,
 } from 'discord.js';
-import { CommandData, SlashCommandProps } from 'commandkit';
-import { UserContextCommandProps, MessageContextCommandProps } from '../interfaces/CommandInterfaces';
+import { CommandData } from 'commandkit';
+import { UserContextCommandProps, MessageContextCommandProps, SlashCommandProps } from '../interfaces/CommandInterfaces';
 
 export type AnySlashCommandData =
     | CommandData

@@ -51,6 +51,14 @@ export default new SlashCommand()
 
 ## Methods
 
+#### `setRun(run)`
+
+Sets the function to be executed when the command is used.
+
+- Parameters:
+  - `run`: [`SlashCommandRunFunction`](/commandkit-helper/docs/typedef/slashcommandrunfunction)
+- Returns: The modified `SlashCommand`.
+
 #### `setData(data)`
 
 Sets the data for the slash command.
@@ -119,12 +127,4 @@ Adds a custom option to the options section to be used in a custom validation
 - Parameters:
   - `optionName`: `string`
   - `optionValue`: `any`
-- Returns: The modified `SlashCommand`.
-
-#### `setRun(run)`
-
-Sets the function to be executed when the command is used.
-
-- Parameters:
-  - `run`: [`SlashCommandRunFunction`](/commandkit-helper/docs/typedef/slashcommandrunfunction)
 - Returns: The modified `SlashCommand`.

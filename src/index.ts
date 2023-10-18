@@ -1,4 +1,4 @@
 export * from './typings/CommandTypes';
-export * from './structures/CommandBuilders';
-export * from './structures/ValidationBuilders'
+export * from './classes/CommandBuilders';
+export * from './classes/ValidationBuilders'
 export * from './typings/ValidationTypes'

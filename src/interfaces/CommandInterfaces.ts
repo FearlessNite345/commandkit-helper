@@ -1,14 +1,21 @@
 import { CommandKit } from "commandkit";
-import { Client, MessageContextMenuCommandInteraction, UserContextMenuCommandInteraction } from "discord.js";
+import { ChatInputCommandInteraction, MessageContextMenuCommandInteraction, UserContextMenuCommandInteraction } from "discord.js";
+import ExtendedClient from "../classes/ExtendedClient";
 
 export interface UserContextCommandProps {
-    client: Client;
+    client: ExtendedClient;
     interaction: UserContextMenuCommandInteraction;
     handler: CommandKit;
 }
 
 export interface MessageContextCommandProps {
-    client: Client;
+    client: ExtendedClient;
     interaction: MessageContextMenuCommandInteraction;
+    handler: CommandKit;
+}
+
+export interface SlashCommandProps {
+    client: ExtendedClient;
+    interaction: ChatInputCommandInteraction;
     handler: CommandKit;
 }

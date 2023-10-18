@@ -1,0 +1,25 @@
+---
+title: ExtendedClient
+---
+
+This allows you to add custom Properties to the base discord.js client when using typescript so you dont get a error
+
+example show below of how you would use this
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs>
+<TabItem label="Typescript">
+```ts
+import { ExtendedClient } from 'commandkit-helper'
+
+const client = new ExtendedClient(
+    {
+        intents: [...]
+    }
+)
+
+client.whateverpropertyyouwant = 21 // allows any property to be set to anything
+```
+</TabItem>
+</Tabs>
